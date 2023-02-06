@@ -7,8 +7,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ## Something Important
 
 点击[链接](https://adentent.github.io/HEAD.html)夹带私活
-点击[链接](https://adentent.github.io/ZhangQihang.html)查看美丽中学生
+点击[链接](https://adentent.github.io/ZhangQihang.html)查看美丽中学生竞选大赛
 
 ## Something Interesting
 
-三点几了，饮茶先啦，你多做工，领导也不会（）的啦。
+看什么，没什么好看的，真的要开始努力在学业上了（跑走
