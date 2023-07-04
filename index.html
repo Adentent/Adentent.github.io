@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to Adentent Page | adentent.github.io</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <p>Welcome to Adentent Page.</p>
+    <p>This have been used since July 4th 2023.</p>
+    <p id="date">So, have a good day.</p>
+    <p>Here are the hyperlinks:</p>
+    <p><a href="HEAD.html">Home Page</a></p>
+    <p><a href="https://github.com/Adentent/Adentent.github.io" target="_blank">Github Code</a></p>
+    <p><a href="EnglishWriting.html">English Writing</p>
+
+    <script>
+        document.querySelector('body').addEventListener('mousemove',
+        (e) => {
+            e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
+            e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
+        });
+
+        function setLinksPositions() {
+        document.querySelectorAll('a').forEach((a) => {
+            const bounding = a.getBoundingClientRect();
+
+            a.style.setProperty('--positionX', `${bounding.x}px`);
+            a.style.setProperty('--positionY', `${bounding.y}px`);
+        });
+        }
+
+        window.addEventListener('load', setLinksPositions);
+        window.addEventListener('resize', setLinksPositions);
+
+        const TimeElapsed = Date.now()
+        const today = new Date(TimeElapsed)
+
+        document.getElementById("date").innerHTML = "And Today is " + today.toDateString() + ".";
+    </script>
+</body>
