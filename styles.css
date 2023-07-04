@@ -1,0 +1,42 @@
+:root {
+    font-size: 15px;
+    --lighting-size: 300px;
+    --lighting-color: #9333ea;
+    --lighting-highlight-color: #d8b4fe;
+}
+
+body {
+    --x: 0px;
+    --y: 0px;
+
+    max-width: 600px;
+    margin: 80px auto;
+
+    font-size: 1.5rem;
+    font-family: Helvetica;
+    background-color: #020617;
+    color: #94a3b8;
+}
+
+div {
+    padding: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #9333ea;
+    display: inline-block;
+
+    background-image: radial-gradient(var(--lighting-highlight-color), var(--lighting-color), var(--lighting-color));
+    background-size: var(--lighting-size) var(--lighting-size);
+    background-repeat: no-repeat;
+
+    background-position-x: calc(var(--x) - var(--positionX) - calc(var(--lighting-size) / 2));
+    background-position-y: calc(var(--y) - var(--positionY) - calc(var(--lighting-size) / 2));
+
+    background-color: var(--lighting-color);
+
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
