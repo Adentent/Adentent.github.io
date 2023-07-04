@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to Adentent Page | adentent.github.io</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <p>Donaiton here:</p>
+    <img src="DonationWechat.png" alt="WeChatPay">
+
+    <p><a href="index.html">← Back to the home page</a></p>
+
+    <script>
+        document.querySelector('body').addEventListener('mousemove',
+        (e) => {
+            e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
+            e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
+        });
+
+        function setLinksPositions() {
+        document.querySelectorAll('a').forEach((a) => {
+            const bounding = a.getBoundingClientRect();
+
+            a.style.setProperty('--positionX', `${bounding.x}px`);
+            a.style.setProperty('--positionY', `${bounding.y}px`);
+        });
+        }
+
+        window.addEventListener('load', setLinksPositions);
+        window.addEventListener('resize', setLinksPositions);
+
+    </script>
+</body>
