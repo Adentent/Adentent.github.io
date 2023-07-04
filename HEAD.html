@@ -1,21 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
 <head>
     <meta charset="utf-8">
-    <title>找老六</title>
+    <title>Welcome to Adentent Page | adentent.github.io</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
+    <p>Welcome to Adentent Page.</p>
+    <p>This have been used since July 4th 2023.</p>
+    <p id="date">So, have a good day.</p>
+    <p>Here are the hyperlinks:</p>
+    <p><a href="HEAD.html">Home Page</a></p>
+    <p><a href="https://github.com/Adentent/Adentent.github.io" target="_blank">Github Code</a></p>
+    <p><a href="EnglishWriting.html">English Writing</p>
 
-    <!-- <h1>我不把那个用深色主题的老六揪出来，我就不当人了我</h1> */
+    <script>
+        document.querySelector('body').addEventListener('mousemove',
+        (e) => {
+            e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
+            e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
+        });
 
-    <p><del>不是然而现在好像已经找到了</del></p>
+        function setLinksPositions() {
+        document.querySelectorAll('a').forEach((a) => {
+            const bounding = a.getBoundingClientRect();
 
-    -->
+            a.style.setProperty('--positionX', `${bounding.x}px`);
+            a.style.setProperty('--positionY', `${bounding.y}px`);
+        });
+        }
 
-    <h1>可是网站还没做好,已经在忙学业了<del>（跑开</del></h1>
+        window.addEventListener('load', setLinksPositions);
+        window.addEventListener('resize', setLinksPositions);
 
+        const TimeElapsed = Date.now()
+        const today = new Date(TimeElapsed)
+
+        document.getElementById("date").innerHTML = "And Today is " + today.toDateString() + ".";
+    </script>
 </body>
-
-</html>
