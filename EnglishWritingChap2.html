@@ -11,4 +11,25 @@
     <p>What I am considering is when the rain can finally stop. It has least almost a month - maybe it stopped sometimes but I did not mention it, it influenced my routine heavily. For example, I need to buy a brand-new bike, but due to the heavy rain, it is delayed. But because of the rain, I drive to work instead of riding, and the bike is just not as vital as before now, so it does not matter now. But the low air pressure, surely makes me mad. I did not mind my child running around my house before, but these days I feel really upset with that. And these days, every single thing seems crazy – my umbrella was just flown away yesterday, and I lost my expensive pants which costs me about 70 dollars. That is why life was like a box of chocolate, you never know what you are going to get, maybe.</p>
 
     <p><a href="EnglishWriting.html">← Back to the catalog</a></p>
+
+    <script>
+        document.querySelector('body').addEventListener('mousemove',
+        (e) => {
+            e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
+            e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
+        });
+
+        function setLinksPositions() {
+        document.querySelectorAll('a').forEach((a) => {
+            const bounding = a.getBoundingClientRect();
+
+            a.style.setProperty('--positionX', `${bounding.x}px`);
+            a.style.setProperty('--positionY', `${bounding.y}px`);
+        });
+        }
+
+        window.addEventListener('load', setLinksPositions);
+        window.addEventListener('resize', setLinksPositions);
+
+    </script>
 </body>
