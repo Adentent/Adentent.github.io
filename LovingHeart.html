@@ -7,6 +7,7 @@
     <META NAME="Author" CONTENT="">
     <META NAME="Keywords" CONTENT="">
     <META NAME="Description" CONTENT="">
+    <link rel="stylesheet" href="./styles.css">
     <style>
         html,
         body {
@@ -25,6 +26,7 @@
 </HEAD>
 
 <BODY>
+    <p><a href="index.html"> ← Back to the home page</a></p>
     <canvas id="pinkboard"></canvas>
     <script>
         /*
@@ -263,9 +265,27 @@
             }, 10);
         })(document.getElementById('pinkboard'));
     </script>
+
+    <script>
+        document.querySelector('body').addEventListener('mousemove',
+            (e) => {
+                e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
+                e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
+            });
+
+        function setLinksPositions() {
+            document.querySelectorAll('a').forEach((a) => {
+                const bounding = a.getBoundingClientRect();
+
+                a.style.setProperty('--positionX', `${bounding.x}px`);
+                a.style.setProperty('--positionY', `${bounding.y}px`);
+            });
+        }
+
+        window.addEventListener('load', setLinksPositions);
+        window.addEventListener('resize', setLinksPositions);
+
+    </script>
 </BODY>
 
 </HTML>
-————————————————
-版权声明：本文为CSDN博主「梦游星海」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/qq_48396625/article/details/109296650
