@@ -6,7 +6,9 @@
     <title>Welcome to Adentent Page | adentent.github.io</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
+    <p>Very good try. You will recive a <a href="LovingHeart.html">loving heart</a> from the author of the page!</p>
     <p>Donaiton here:</p>
     <img src="DonationWechat.png" alt="WeChatPay">
 
@@ -14,18 +16,18 @@
 
     <script>
         document.querySelector('body').addEventListener('mousemove',
-        (e) => {
-            e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
-            e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
-        });
+            (e) => {
+                e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
+                e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
+            });
 
         function setLinksPositions() {
-        document.querySelectorAll('a').forEach((a) => {
-            const bounding = a.getBoundingClientRect();
+            document.querySelectorAll('a').forEach((a) => {
+                const bounding = a.getBoundingClientRect();
 
-            a.style.setProperty('--positionX', `${bounding.x}px`);
-            a.style.setProperty('--positionY', `${bounding.y}px`);
-        });
+                a.style.setProperty('--positionX', `${bounding.x}px`);
+                a.style.setProperty('--positionY', `${bounding.y}px`);
+            });
         }
 
         window.addEventListener('load', setLinksPositions);
