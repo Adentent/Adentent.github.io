@@ -5,10 +5,51 @@
     <meta charset="utf-8">
     <title>Happy birthday! | adentent.github.io</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./HappyBirthday.css">
 </head>
 
 <body>
-    <p>Hello!</p>
-    <p>Happy Birthday!</p>
-    <p>At Sun Feb 11 2024, hope you will have <b>a good day</b>!</p>
+    <span class="text">
+        <p>Hello!</p>
+        <p>Happy Birthday!</p>
+        <p>At Sun Feb 11 2024, your birthday, hope you will have <b>a good day</b>!</p>
+    </span>
+    <script>
+        const text = document.querySelector('.text');
+        const txt = ["Hello!",
+            "Happy Birthday!",
+            "At Sun Feb 11 2024, your birthday, hope you will have <b>a good day</b>!",
+            "Maybe it look simple, but hard to make!",
+            "Have a good day anyway!"];
+
+        var index = 0;
+        var xiaBiao = 0;
+        var huan = true;
+
+        setInterval(function () {
+
+            if (huan) {
+                text.innerHTML = txt[xiaBiao].slice(0, ++index);
+                console.log(index);
+            }
+            else {
+                text.innerHTML = txt[xiaBiao].slice(0, index--);
+                console.log(index);
+            }
+
+            if (index == txt[xiaBiao].length + 3) {
+                huan = false;
+            }
+            else if (index < 0) {
+                index = 0;
+                huan = true;
+                xiaBiao++;
+                if (xiaBiao >= txt.length) {
+                    xiaBiao = 0;
+                }
+            }
+
+        }, 60)
+
+    </script>
 </body>

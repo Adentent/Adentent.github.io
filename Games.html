@@ -6,6 +6,7 @@
     <title>Welcome to Adentent Page | adentent.github.io</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
     <p>Here are my gaming projects:</p>
     <p><a href="2048.html">2048</p>
@@ -14,18 +15,18 @@
 
     <script>
         document.querySelector('body').addEventListener('mousemove',
-        (e) => {
-            e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
-            e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
-        });
+            (e) => {
+                e.currentTarget.style.setProperty('--x', `${e.clientX}px`);
+                e.currentTarget.style.setProperty('--y', `${e.clientY}px`);
+            });
 
         function setLinksPositions() {
-        document.querySelectorAll('a').forEach((a) => {
-            const bounding = a.getBoundingClientRect();
+            document.querySelectorAll('a').forEach((a) => {
+                const bounding = a.getBoundingClientRect();
 
-            a.style.setProperty('--positionX', `${bounding.x}px`);
-            a.style.setProperty('--positionY', `${bounding.y}px`);
-        });
+                a.style.setProperty('--positionX', `${bounding.x}px`);
+                a.style.setProperty('--positionY', `${bounding.y}px`);
+            });
         }
 
         window.addEventListener('load', setLinksPositions);
