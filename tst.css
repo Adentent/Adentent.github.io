@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+#wrap {
+    position: relative;
+    /*容器盒子都是设为相对定位*/
+    width: 590px;
+    height: 470px;
+    margin: 50px auto;
+    /*左右居中*/
+
+}
+
+/*图前面的小点和箭头去掉*/
+#wrap ul {
+    list-style: none;
+}
+
+/*将图片都叠加到一块(布局)*/
+#wrap .imgs li {
+    position: absolute;
+    /*所有图片居中集合*/
+    display: none;
+}
+
+/*当前活动图的展示*/
+#wrap .imgs li.active {
+    display: block;
+}
+
+/*左右按钮的布局*/
+#wrap .lrbtn li {
+    position: absolute;
+    top: 50%;
+    /*垂直布局*/
+    margin-top: -40px;
+    /*相对居中*/
+    width: 40px;
+    height: 80px;
+    background-color: white;
+    /*背景色*/
+    opacity: 0.5;
+    /*透明度*/
+
+    line-height: 80px;
+    /*小箭头垂直居中，行高设置与按钮同高就可以*/
+
+}
+
+#wrap .lrbtn li:last-child {
+    right: 0;
+}
+
+/*轮播按钮的布局设计*/
+#wrap .btn {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    background-color: pink;
+    display: flex;
+    width: 210px;
+    height: 30px;
+    border-radius: 20px;
+
+}
+
+#wrap .btn li {
+    width: 20px;
+    height: 20px;
+    flex: 1;
+    border-radius: 10px;
+    background-color: white;
+    margin: 5px;
+}
+
+#wrap .btn li.on {
+    background-color: red;
+}
